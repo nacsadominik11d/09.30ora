@@ -17,17 +17,22 @@ for (int i = 0; i < 5; i++)
 double atlag = osszeg/lepesszamok.Count;
 
 //4.feladat
+string kiir = "";
+if (atlag >= 10000) kiir = "Kiválló forma, teljesítetted a célt!";
+else if (atlag >= 7000) kiir= "Átlagos aktivitás jó úton jársz!";
+else kiir= "Kevés Mozgás, több aktivitás szükséges!";
 
-if(atlag >= 10000)
+//5.feladat  
+
+Console.WriteLine("Adatok feldolgozása...\n======================================================");
+for(int i = 0; i < lepesszamok.Count; i++)
 {
-    Console.WriteLine("Kiválló forma, teljesítetted a célt!");
+    Console.WriteLine($"\t- {i+1}. nap {lepesszamok[i]} lépés");
 }
-else if (atlag >= 7000)
-{
-    Console.WriteLine("Átlagos aktivitás jó úton jársz!");
-}
-else
-{
-    Console.WriteLine("Kevés Mozgás, több aktivitás szükséges!");
-}
-//5.feladat
+Console.WriteLine("-----------------------------------------------------");
+Console.WriteLine($"Összes Lépésszám: {osszeg} lépés");
+Console.WriteLine($"Napi átlagos lépésszám: {atlag:F0} lépés");//0f
+Console.WriteLine($"Értékelés: {kiir}");
+Console.WriteLine("======================================================");
+
+
